@@ -109,9 +109,9 @@ static Key keys[] = {
 	TAGKEYS(                        XK_8,                                     7)
 	TAGKEYS(                        XK_9,                                     8)
 	{ MODKEY|ShiftMask,             XK_q,                     quit,           {0} },
-	{ 0,                            XF86XK_AudioRaiseVolume,  spawn,          SHCMD("amixer -q sset Master 5%+; pkill -RTMIN+10 dwmblocks") },
-	{ 0,                            XF86XK_AudioLowerVolume,  spawn,          SHCMD("amixer -q sset Master 5%-; pkill -RTMIN+10 dwmblocks") },
-	{ 0,                            XF86XK_AudioMute,         spawn,          SHCMD("amixer -q sset Master toggle; pkill -RTMIN+10 dwmblocks") },
+	{ 0,                            XF86XK_AudioRaiseVolume,  spawn,          SHCMD("pactl set-sink-volume @DEFAULT_SINK@ +5%; pkill -RTMIN+10 dwmblocks") },
+	{ 0,                            XF86XK_AudioLowerVolume,  spawn,          SHCMD("pactl set-sink-volume @DEFAULT_SINK@ -5%; pkill -RTMIN+10 dwmblocks") },
+	{ 0,                            XF86XK_AudioMute,         spawn,          SHCMD("pactl set-sink-mute @DEFAULT_SINK@ toggle; pkill -RTMIN+10 dwmblocks") },
 	{ 0,                            XF86XK_AudioMicMute,      spawn,          SHCMD("amixer -q sset Capture toggle; pkill -RTMIN+10 dwmblocks") },
 	{ 0,                            XF86XK_MonBrightnessUp,   spawn,          SHCMD("brightnessctl set +5%; pkill -RTMIN+11 dwmblocks") },
 	{ 0,                            XF86XK_MonBrightnessDown, spawn,          SHCMD("brightnessctl set 5%-; pkill -RTMIN+11 dwmblocks") },
